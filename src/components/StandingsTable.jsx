@@ -5,23 +5,25 @@ export default function StandingsTable({ standings }) {
   const sorted = [...standings].sort((a, b) => b.points - a.points)
 
   return (
-    <table className="standings-table">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Time</th>
-          <th>Pontos</th>
-        </tr>
-      </thead>
-      <tbody>
-        {sorted.map((row, i) => (
-          <tr key={row.team_id}>
-            <td>{i + 1}</td>
-            <td>{row.name}</td>
-            <td>{row.points}</td>
+    <div className="table-wrap">
+      <table className="standings-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Time</th>
+            <th>Pontos</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {sorted.map((row, i) => (
+            <tr key={row.team_id}>
+              <td>{i + 1}</td>
+              <td>{row.name}</td>
+              <td>{row.points}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   )
 }

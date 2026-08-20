@@ -15,7 +15,7 @@ export default function PhaseSection({ phase, games }) {
 
   return (
     <section className="phase-section">
-      <h3>{PHASE_LABEL[phase] || phase}</h3>
+      <h3 className="phase-title">{PHASE_LABEL[phase] || phase}</h3>
       <div className="game-list">
         {sorted.map((game) => (
           <GameCard key={game.id} game={game} />

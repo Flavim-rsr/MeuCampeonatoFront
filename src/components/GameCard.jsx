@@ -14,18 +14,21 @@ export default function GameCard({ game }) {
   return (
     <div className="game-card">
       <div className="game-teams">
-        <span className={`team ${homeWon ? 'winner' : ''}`}>{game.home_team.name}</span>
-        <span className="score">
-          {game.home_score ?? '-'} x {game.away_score ?? '-'}
-        </span>
-        <span className={`team ${awayWon ? 'winner' : ''}`}>{game.away_team.name}</span>
-      </div>
+        <span className={`team team-home ${homeWon ? 'winner' : ''}`}>{game.home_team.name}</span>
 
-      {hasPenalties && (
-        <div className="penalties">
-          pênaltis: {game.penalty_home} x {game.penalty_away}
+        <div className="scoreboard">
+          <span className="score-value">{game.home_score ?? '-'}</span>
+          <span className="score-sep">x</span>
+          <span className="score-value">{game.away_score ?? '-'}</span>
+          {hasPenalties && (
+            <span className="score-penalties">
+              ({game.penalty_home}-{game.penalty_away} pên.)
+            </span>
+          )}
         </div>
-      )}
+
+        <span className={`team team-away ${awayWon ? 'winner' : ''}`}>{game.away_team.name}</span>
+      </div>
 
       {game.decided_by && (
         <span className={`badge badge-${game.decided_by}`}>
