@@ -1,16 +1,22 @@
-# React + Vite
+# Meu Campeonato — Front
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Interface em React para visualizar a API do [Meu Campeonato](https://github.com/Flavim-rsr/MeuCampeonatoTest) (teste técnico back-end): login, cadastro de times, criação de campeonatos, simulação fase a fase, chaveamento com critério de decisão de cada jogo, pódio e ranking histórico.
 
-Currently, two official plugins are available:
+Este front **não faz parte do escopo do teste** — construí como ferramenta de apoio para exercitar a API de ponta a ponta por uma interface, além do Postman. O rigor (testes, arquitetura, CI) mora no back-end.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+![tema](https://img.shields.io/badge/tema-retr%C3%B4%20anos%2090-f2b705)
 
-## React Compiler
+## Como rodar
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Pré-requisitos: Node 18+ e a API do back-end no ar em `http://localhost:8000` (via `docker compose up -d --build` no repositório do back).
 
-## Expanding the Oxlint configuration
+```bash
+npm install
+npm run dev   # http://localhost:5173
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+Crie uma conta na tela de login e siga o fluxo: times → campeonato → inscrever 8 → iniciar → simular.
+
+## Stack
+
+Vite · React 18 (JavaScript) · react-router-dom · fetch nativo · CSS puro (tema retrô de álbum de figurinhas anos 90). Sem UI kit e sem testes, por decisão: é uma ferramenta pessoal de visualização.
