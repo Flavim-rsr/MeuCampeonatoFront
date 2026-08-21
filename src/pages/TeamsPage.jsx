@@ -52,6 +52,8 @@ export default function TeamsPage() {
 
       {loading ? (
         <p>Carregando...</p>
+      ) : teams.length === 0 ? (
+        <p className="empty-state">Nenhum time cadastrado ainda.</p>
       ) : (
         <ul className="list">
           {teams.map((team) => (

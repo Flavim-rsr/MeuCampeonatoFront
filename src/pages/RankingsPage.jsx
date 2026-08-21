@@ -25,6 +25,8 @@ export default function RankingsPage() {
 
       {loading ? (
         <p>Carregando...</p>
+      ) : rankings.length === 0 ? (
+        <p className="empty-state">Nenhum campeonato finalizado ainda — o ranking aparece aqui depois do primeiro título.</p>
       ) : (
         <div className="table-wrap">
           <table className="rankings-table">

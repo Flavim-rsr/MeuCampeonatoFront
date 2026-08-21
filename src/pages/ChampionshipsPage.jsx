@@ -83,6 +83,8 @@ export default function ChampionshipsPage() {
 
       {loading ? (
         <p>Carregando...</p>
+      ) : championships.length === 0 ? (
+        <p className="empty-state">Nenhum campeonato por aqui ainda.</p>
       ) : (
         <ul className="list">
           {championships.map((champ) => (
